@@ -60,8 +60,7 @@ const Signup = () => {
                     <input onBlur={handleConfirmPasswordBlur} type="password" name="password" id="" placeholder='confirm password' required /> <br />
                     <p className='text-danger'>{errorMassage}</p>
                     <input className='submit' type="submit" value="SignUp" />
-                    <p>Already have an account?</p>
-                    <Link to='/login'>Login</Link>
+                    <p>Already have an account? <Link className='login-link' to='/login'>Login</Link></p>
                 </form>
             </div>
             <div className='middle-break'>

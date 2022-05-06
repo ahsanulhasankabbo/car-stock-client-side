@@ -9,7 +9,7 @@ import Login from './Components/Login/Login';
 import Blogs from './Components/Blogs/Blogs';
 import Notfound from './Components/Notfound/Notfound';
 import Signup from './Components/Signup/Signup';
-import RequitAuth from './Components/Login/RequirAuth/RequitAuth';
+import RequitAuth from './Components/RequirAuth/RequirAuth';
 
 function App() {
   return (

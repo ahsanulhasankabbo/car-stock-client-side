@@ -1,0 +1,22 @@
+.single-inventory{
+    width: 300px;
+    margin:20px auto;
+    display: block;
+    border: 1px solid gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.single-inventory img{
+    width: 100%;
+    margin:0 auto 10px;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.single-inventory button{
+    border: none;
+    background-color: #1ABC9C;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+}

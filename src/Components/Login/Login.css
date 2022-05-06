@@ -1,0 +1,11 @@
+.signup-link{
+    text-decoration: none;
+    color: #1ABC9C;
+}
+.reset-button{
+    border: none;
+    background-color: #1ABC9C;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

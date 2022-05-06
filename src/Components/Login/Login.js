@@ -3,7 +3,8 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
-import google from './image/google.jpg'
+import google from './image/google.jpg';
+import './Login.css'
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -60,8 +61,8 @@ const Login = () => {
                     <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='Set Password' required /> <br />
                     <p>{errorEmail?.message}</p>
                     <input className='submit' type="submit" value="Login" required />
-                    <p>New to tutor sheba? <Link to='/signup'>Create new account</Link></p>
-                    <p>Forget password? <button onClick={resetPassword} >Reset</button></p>
+                    <p>New to tutor sheba? <Link className='signup-link' to='/signup'>Create new account</Link></p>
+                    <p>Forget password? <button className='reset-button' onClick={resetPassword} >Reset</button></p>
                 </form>
                 <div className='middle-break'>
                     <hr />
