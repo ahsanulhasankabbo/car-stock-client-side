@@ -10,6 +10,7 @@ import Blogs from './Components/Blogs/Blogs';
 import Notfound from './Components/Notfound/Notfound';
 import Signup from './Components/Signup/Signup';
 import RequitAuth from './Components/RequirAuth/RequirAuth';
+import InventoryDetails from './Components/InventoryDetails/InventoryDetails';
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
         <Route path='/inventory' element={
           <RequitAuth>
             <Inventory></Inventory>
+          </RequitAuth>
+        }></Route>
+        <Route path='/inventory/:inventoryId' element={
+          <RequitAuth>
+            <InventoryDetails></InventoryDetails>
           </RequitAuth>
         }></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>

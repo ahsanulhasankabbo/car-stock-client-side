@@ -19,7 +19,7 @@ const Signup = () => {
         userEmail,
         loadingEmail,
         errorEmail,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
 
     const handleEmailBlur = event => {
         setEmail(event.target.value);
