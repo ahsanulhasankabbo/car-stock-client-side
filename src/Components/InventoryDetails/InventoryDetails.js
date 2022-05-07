@@ -14,17 +14,15 @@ const InventoryDetails = () => {
     return (
         <div className='inventoryDetails'>
             <img src={inventory.image} alt="" />
-            <h1>Name : {inventory.name}</h1>
-            <p>id : {inventory._id}</p>
-            <p>discription : {inventory.discription}</p>
-            <p>price : {inventory.price}</p>
-            <p>quantity : {inventory.quantity}</p>
-            <p>supplier name : {inventory.supplierName}</p>
-            <button>Delivered</button>
-            <h1>Restock the items</h1>
-            <input type="number" name="" id="" />
-            <Link to='/manageinventories'><button>Manage inventoties</button></Link>
-
+            <h3>Name : {inventory.name}</h3>
+            <p><span>Id :</span> {inventory._id}</p>
+            <p><span>Discription :</span> {inventory.discription}</p>
+            <p><span>Price :</span> {inventory.price}</p>
+            <p><span>Quantity :</span> {inventory.quantity}</p>
+            <p><span>Supplier Name :</span> {inventory.supplierName}</p>
+            <button className='btn delivary-button'>Delivered</button>
+            <h3>Restock the items</h3>
+            <input type="number" name="" id="" /> <br />
         </div>
     );
 };

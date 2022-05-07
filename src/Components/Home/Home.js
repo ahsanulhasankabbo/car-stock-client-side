@@ -22,7 +22,7 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <Link to='/manageinventories'><button>Manage inventoties</button></Link>
+            <Link to='/manageinventories'><button className='manage-button'>Manage inventoties</button></Link>
         </div>
     );
 };
