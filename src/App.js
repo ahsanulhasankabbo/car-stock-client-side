@@ -11,6 +11,7 @@ import Notfound from './Components/Notfound/Notfound';
 import Signup from './Components/Signup/Signup';
 import RequitAuth from './Components/RequirAuth/RequirAuth';
 import InventoryDetails from './Components/InventoryDetails/InventoryDetails';
+import ManageInventories from './Components/ManageInventories/ManageInventories';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
             <InventoryDetails></InventoryDetails>
           </RequitAuth>
         }></Route>
+  
+        <Route path='/manageinventories' element={<ManageInventories></ManageInventories>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>

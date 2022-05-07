@@ -21,11 +21,17 @@ const Header = () => {
                             <Nav.Link href="/home">Home</Nav.Link>
                             <Nav.Link href="/inventory">Inventory</Nav.Link>
                             <Nav.Link href="/blogs">Blogs</Nav.Link>
-                           
+                           {
+                               user && <>
+                               <Nav.Link href="/manageitems">Manage items</Nav.Link>
+                               <Nav.Link href="/additems">Add item</Nav.Link>
+                               <Nav.Link href="/mytiems">My items</Nav.Link>
+                               </>
+                           }
                             {
                                 user ? 
                                 <Nav.Link onClick={handleSignOut}>Logout</Nav.Link> :
-                                <Nav.Link href="/signup">SignUp</Nav.Link>
+                                <Nav.Link href="/login">Login</Nav.Link>
                             }
                         </Nav>
                     </Container>

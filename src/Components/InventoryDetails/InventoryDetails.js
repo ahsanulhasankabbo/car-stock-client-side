@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import './InventoryDetails.css'
 
 const InventoryDetails = () => {
     const {inventoryId} = useParams();
@@ -11,8 +12,19 @@ const InventoryDetails = () => {
         .then(data => setInventory(data));
     },[])
     return (
-        <div>
-            <h1>this is inventory details : {inventory.name}</h1>
+        <div className='inventoryDetails'>
+            <img src={inventory.image} alt="" />
+            <h1>Name : {inventory.name}</h1>
+            <p>id : {inventory._id}</p>
+            <p>discription : {inventory.discription}</p>
+            <p>price : {inventory.price}</p>
+            <p>quantity : {inventory.quantity}</p>
+            <p>supplier name : {inventory.supplierName}</p>
+            <button>Delivered</button>
+            <h1>Restock the items</h1>
+            <input type="number" name="" id="" />
+            <Link to='/manageinventories'><button>Manage inventoties</button></Link>
+
         </div>
     );
 };

@@ -20,10 +20,10 @@ const RequitAuth = ({ children }) => {
         return <div className='text-center mt-5'>
             <h3 className='text-danger'>Email is not verified</h3>
             <h5> Please Verify your email address</h5>
-            <button className='btn btn-success' onClick={async()=>{
-                await sendEmailVerification();
-                toast('send varification mail');
-            }  }>send varification mail again</button>
+            <button className='btn btn-primary' onClick={async () => {
+                    await sendEmailVerification();
+                    toast('Sent email');
+                }}>Send Verification Email Again</button>
             <ToastContainer></ToastContainer>
         </div>
     }
