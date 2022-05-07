@@ -25,24 +25,9 @@ const ManageInventories = () => {
         }
     }
     return (
-        // <div>
-        //     <h1 className='text-center mt-5'>Manage Inventories</h1>
-        //     <Link to='/additems'><button className='add-button'>Add new item</button></Link>
-        //     <div className='inventory'>
-        //         {
-        //             inventorys.map(inventory => <ManageInventoryDetails
-        //                 key={inventory._id}
-        //                 inventory={inventory}
-        //                 handleDelete={handleDelete}
-        //             ></ManageInventoryDetails>)
-        //         }
-        //     </div>
-        // </div>
-
-
         <div>
             <Link to='/additems'><button className='add-button'>Add new item</button></Link>
-            <div className='w-50 mx-auto'>
+            <div className='table'>
                 <Table striped bordered hover responsive>
                     <thead>
                         <tr>

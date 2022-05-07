@@ -63,10 +63,10 @@ const InventoryDetails = () => {
             <p><span>Price :</span> {inventory.price}</p>
             <p><span>Quantity :</span> {inventory.quantity}</p>
             <p><span>Supplier Name :</span> {inventory.supplierName}</p>
-            <button onClick={()=> handleDelivered(inventory._id)} className='btn delivary-button'>Delivered</button>
+            <button onClick={()=> handleDelivered(inventory._id)} className='btn button mb-3'>Delivered</button>
             <h3>Restock the items</h3>
             <input type="number" name="" id="" ref={restockRef} placeholder='Restock item' /> <br />
-            <input onClick={()=> handleRestock(inventory._id)} type="submit" value="Restock Now" />
+            <input className='btn button mt-2' onClick={()=> handleRestock(inventory._id)} type="submit" value="Restock Now" />
         </div>
     );
 };
