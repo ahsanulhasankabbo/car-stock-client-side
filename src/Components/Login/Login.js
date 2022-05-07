@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import google from './image/google.jpg';
 import './Login.css'
@@ -9,6 +10,7 @@ import './Login.css'
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    // const emailRef = useRef('');
 
     const [
         signInWithEmailAndPassword,
@@ -41,6 +43,8 @@ const Login = () => {
     }
 
     const resetPassword = async () => {
+        // const email = emailRef.current.value;
+        // console.log(email)
         await sendPasswordResetEmail(email);
         toast('Sent email');
     }
@@ -51,6 +55,8 @@ const Login = () => {
         navigate(from, {replace: true});
     }
 
+    //ref={emailRef} 
+
     return (
         <div>
             <div className='input-field'>
@@ -59,7 +65,7 @@ const Login = () => {
                     <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Email Address' required /> <br />
                     <label htmlFor="password">Password</label>
                     <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='Set Password' required /> <br />
-                    <p>{errorEmail?.message}</p>
+                    <p className='text-danger'>{errorEmail?.message}</p>
                     <input className='submit' type="submit" value="Login" required />
                     <p>New to tutor sheba? <Link className='signup-link' to='/signup'>Create new account</Link></p>
                     <p>Forget password? <button className='reset-button' onClick={resetPassword} >Reset</button></p>
@@ -74,7 +80,7 @@ const Login = () => {
                     <p>sign in with google</p>
                 </button>
             </div>
-            <ToastContainer></ToastContainer>
+            <ToastContainer/>
         </div>
     );
 };
