@@ -15,7 +15,6 @@ const RequitAuth = ({ children }) => {
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace></Navigate>
     }
-    console.log(user);
     if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
         return <div className='text-center mt-5'>
             <h3 className='text-danger'>Email is not verified</h3>
