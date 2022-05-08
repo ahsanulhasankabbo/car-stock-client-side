@@ -5,6 +5,18 @@
     height: 100vh;
     width: 100vw;
 }
+.banner-info{
+    width: 70%;
+    color: #d3c8c8;
+    padding: 150px 120px ;
+    
+}
+.banner-info button{
+    border: 1px solid #d3c8c8;
+    background-color: transparent;
+    color: #d3c8c8;
+    padding: 7px 15px;
+}
 .manage-button{
     border: none;
     background-color: #1ABC9C;
@@ -13,4 +25,14 @@
     border-radius: 5px;
     margin-left: 80%;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px){
+    .banner-info{
+        width: 100%;
+        padding:  40% 20px;
+    }
+    .manage-button{
+        margin-left: 45%;
+    }
 }

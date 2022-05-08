@@ -1,0 +1,22 @@
+.address{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 50px;
+    background-color: wheat;
+}
+.info h6{
+    margin:20px 0;
+}
+.input-container input,textarea{
+    background-color: #f6e6ca;
+    border: 1px solid #928a7b;
+    margin: 3px 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 768px){
+    .address{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

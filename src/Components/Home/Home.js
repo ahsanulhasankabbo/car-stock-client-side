@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useInventory from '../../hooks/useInventory';
+import Address from '../Address/Address';
+import Services from '../Services/Services';
 import SingleInventory from '../SingleInventory/SingleInventory';
 import './Home.css'
 
@@ -9,7 +11,11 @@ const Home = () => {
     return (
         <div>
             <div className='banner'>
-
+                <div className='banner-info'>
+                    <h1>Car Stock</h1>
+                    <p>Explore the vast model range of new cars by widely know manufactures on our website.</p>
+                    <Link to='/manageinventories'><button>Explore more</button></Link>
+                </div>
             </div>
             <div>
                 <h1 className='text-center mt-3'>Our inventory</h1>
@@ -23,6 +29,12 @@ const Home = () => {
                 </div>
             </div>
             <Link to='/manageinventories'><button className='manage-button'>Manage inventoties</button></Link>
+            <div>
+                <Services></Services>
+            </div>
+            <div>
+                <Address></Address>
+            </div>
         </div>
     );
 };

@@ -12,6 +12,7 @@ import RequitAuth from './Components/RequirAuth/RequirAuth';
 import InventoryDetails from './Components/InventoryDetails/InventoryDetails';
 import ManageInventories from './Components/ManageInventories/ManageInventories';
 import AddItems from './Components/AddItems/AddItems';
+import Opinion from './Components/Opinion/Opinion';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         }></Route> 
         <Route path='/manageinventories' element={<ManageInventories></ManageInventories>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/opinion' element={<Opinion></Opinion>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
