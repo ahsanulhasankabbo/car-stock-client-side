@@ -13,6 +13,7 @@ import InventoryDetails from './Components/InventoryDetails/InventoryDetails';
 import ManageInventories from './Components/ManageInventories/ManageInventories';
 import AddItems from './Components/AddItems/AddItems';
 import Opinion from './Components/Opinion/Opinion';
+import MyItems from './Components/MyItems/MyItems';
 
 function App() {
   return (
@@ -30,8 +31,17 @@ function App() {
           <RequitAuth>
             <InventoryDetails></InventoryDetails>
           </RequitAuth>
-        }></Route> 
-        <Route path='/manageinventories' element={<ManageInventories></ManageInventories>}></Route>
+        }></Route>
+        <Route path='/myitems' element={
+          <RequitAuth>
+            <MyItems></MyItems>
+          </RequitAuth>
+        }></Route>
+        <Route path='/manageinventories' element={
+          <RequitAuth>
+            <ManageInventories></ManageInventories>
+          </RequitAuth>
+        }></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/opinion' element={<Opinion></Opinion>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

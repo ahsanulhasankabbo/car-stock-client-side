@@ -22,17 +22,16 @@ const Header = () => {
                             <Nav.Link href="/home">Home</Nav.Link>
                         </Nav>
                         <Nav>
-                        <Nav.Link href="/blogs">Blogs</Nav.Link>
-
                             {
                                 user && <>
-                                    <Nav.Link href="/manageitems">Manage items</Nav.Link>
+                                    {/* <Nav.Link href="/manageitems">Manage items</Nav.Link> */}
                                     <Nav.Link href="/additems">Add items</Nav.Link>
                                     <Nav.Link eventKey={2} href="/myitems">
                                         My items
                                     </Nav.Link>
                                 </>
                             }
+                            <Nav.Link href="/blogs">Blogs</Nav.Link>
                             {
                                 user ?
                                     <Nav.Link onClick={handleSignOut}>Logout</Nav.Link> :
