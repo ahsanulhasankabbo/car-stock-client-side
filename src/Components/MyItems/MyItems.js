@@ -25,7 +25,7 @@ const MyItems = () => {
                 setOrder(data)
             }
             catch(error){
-                console.log(error.message);
+                // console.log(error.message);
                 if(error.response.status === 401 || error.response.status === 403){
                     signOut(auth);
                     navigate('/login')
@@ -34,7 +34,7 @@ const MyItems = () => {
         }
         getOrders();
     },[user,navigate])
-    
+
     const handleDelete = id => {
         const proceed = window.confirm('are you sure?');
         if (proceed) {
@@ -63,7 +63,7 @@ const MyItems = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {order.map((singleOrder) => (
+                        {order?.map((singleOrder) => (
                             <tr key={singleOrder._id}>
                                 <td>{singleOrder.name}</td>
                                 <td>{singleOrder.quantity}</td>
