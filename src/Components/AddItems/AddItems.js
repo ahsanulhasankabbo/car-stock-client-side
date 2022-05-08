@@ -8,7 +8,7 @@ const AddItems = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         const url = `http://localhost:5000/manageinventories`;
         fetch(url, {
             method: 'POST',
@@ -19,7 +19,7 @@ const AddItems = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 toast('Inventory add on your side')
             })
         

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -10,7 +11,7 @@ import './Login.css'
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const emailRef = useRef('');
+    const emailRef = useRef('');
 
     const [
         signInWithEmailAndPassword,
@@ -34,17 +35,20 @@ const Login = () => {
     }
 
     if (userEmail) {
+        // navigate(from, { replace: true });
+    }
+
+    const handleUserSignIn = async event => {
+        event.preventDefault();
+        await signInWithEmailAndPassword(email, password);
+        const {data} = await axios.post('http://localhost:5000/login',{email});
+        localStorage.setItem('accessToken',data.accessToken);
         navigate(from, { replace: true });
     }
 
-    const handleUserSignIn = event => {
-        event.preventDefault();
-        signInWithEmailAndPassword(email, password);
-    }
-
     const resetPassword = async () => {
-        // const email = emailRef.current.value;
-        // console.log(email)
+        const email = emailRef.current.value;
+        console.log(email)
         await sendPasswordResetEmail(email);
         toast('Sent email');
     }
@@ -55,18 +59,16 @@ const Login = () => {
         navigate(from, {replace: true});
     }
 
-    //ref={emailRef} 
-
     return (
         <div>
             <div className='input-field'>
                 <form onSubmit={handleUserSignIn}>
                     <label htmlFor="email">Email</label>
-                    <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Email Address' required /> <br />
+                    <input ref={emailRef}  onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Email Address' required /> <br />
                     <label htmlFor="password">Password</label>
                     <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='Set Password' required /> <br />
                     <p className='text-danger'>{errorEmail?.message}</p>
-                    <input className='submit' type="submit" value="Login" required />
+                    <input className='submit' type="submit" value="Login" />
                     <p>New to tutor sheba? <Link className='signup-link' to='/signup'>Create new account</Link></p>
                     <p>Forget password? <button className='reset-button' onClick={resetPassword} >Reset</button></p>
                 </form>

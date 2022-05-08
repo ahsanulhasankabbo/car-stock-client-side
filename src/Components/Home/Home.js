@@ -1,13 +1,28 @@
-import React from 'react';
+import { async } from '@firebase/util';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useInventory from '../../hooks/useInventory';
 import Address from '../Address/Address';
+import Loading from '../Loading/Loading';
 import Services from '../Services/Services';
 import SingleInventory from '../SingleInventory/SingleInventory';
 import './Home.css'
 
 const Home = () => {
-    const [inventorys, setInventorys] = useInventory();
+    // const [inventorys, setInventorys] = useInventory();
+    const [loading, setLoading] = useState(false);
+    const [inventorys, setInventorys] = useState([]);
+    useEffect(() => {
+        const loadData = async () => {
+            setLoading(true)
+            await fetch('http://localhost:5000/inventory')
+                .then(res => res.json())
+                .then(data => setInventorys(data));
+                setLoading(false);
+        }
+        loadData();
+
+    }, [])
     return (
         <div>
             <div className='banner'>
@@ -19,7 +34,9 @@ const Home = () => {
             </div>
             <div>
                 <h1 className='text-center mt-3'>Our inventory</h1>
-                <div className='inventory'>
+                {
+                    loading ? <Loading></Loading> : 
+                    <div className='inventory'>
                     {
                         inventorys.slice(0, 6).map(inventory => <SingleInventory
                             key={inventory._id}
@@ -27,12 +44,13 @@ const Home = () => {
                         ></SingleInventory>)
                     }
                 </div>
+                }
             </div>
             <Link to='/manageinventories'><button className='manage-button'>Manage inventoties</button></Link>
             <div>
                 <Services></Services>
             </div>
-            <div>
+            <div className='mb-5'>
                 <Address></Address>
             </div>
         </div>
