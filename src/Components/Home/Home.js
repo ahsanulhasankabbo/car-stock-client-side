@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const loadData = async () => {
             setLoading(true)
-            await fetch('http://localhost:5000/inventory')
+            await fetch('https://fast-refuge-28086.herokuapp.com/inventory')
                 .then(res => res.json())
                 .then(data => setInventorys(data));
                 setLoading(false);

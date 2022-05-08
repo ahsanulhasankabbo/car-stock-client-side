@@ -9,7 +9,7 @@ const AddItems = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         // console.log(data);
-        const url = `http://localhost:5000/manageinventories`;
+        const url = `https://fast-refuge-28086.herokuapp.com/manageinventories`;
         fetch(url, {
             method: 'POST',
             headers: {

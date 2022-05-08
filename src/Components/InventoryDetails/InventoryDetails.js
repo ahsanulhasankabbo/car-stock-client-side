@@ -7,7 +7,7 @@ const InventoryDetails = () => {
     const {inventoryId} = useParams();
     const [inventory,setInventory] = useState({});
     useEffect(()=>{
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://fast-refuge-28086.herokuapp.com/inventory/${inventoryId}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setInventory(data));
@@ -19,7 +19,7 @@ const InventoryDetails = () => {
             const newInventory = {quantity: newQuantity, ...rest};
             setInventory(newInventory);
 
-            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            const url = `https://fast-refuge-28086.herokuapp.com/inventory/${inventoryId}`;
             fetch(url,{
                 method: 'PUT',
                 headers: {
@@ -41,7 +41,7 @@ const InventoryDetails = () => {
         const newInventory = {quantity : newQuantity , ...rest};
         setInventory(newInventory);
 
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://fast-refuge-28086.herokuapp.com/inventory/${inventoryId}`;
         fetch(url,{
             method: 'PUT',
             headers: {

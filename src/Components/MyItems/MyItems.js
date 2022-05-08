@@ -14,8 +14,8 @@ const MyItems = () => {
     const navigate = useNavigate();
     useEffect(()=>{
         const getOrders = async() =>{
-            const email = user.email;
-            const url = `http://localhost:5000/order?email=${email}`;
+            const email = user?.email;
+            const url = `https://fast-refuge-28086.herokuapp.com/order?email=${email}`;
             try{
                 const {data} = await axios.get(url,{
                     headers: {
@@ -33,11 +33,12 @@ const MyItems = () => {
             }
         }
         getOrders();
-    },[user])
+    },[user,navigate])
+    
     const handleDelete = id => {
         const proceed = window.confirm('are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/manageinventories/${id}`;
+            const url = `https://fast-refuge-28086.herokuapp.com/manageinventories/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

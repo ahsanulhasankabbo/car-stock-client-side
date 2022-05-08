@@ -12,7 +12,7 @@ const ManageInventories = () => {
     const handleDelete = id => {
         const proceed = window.confirm('are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/manageinventories/${id}`;
+            const url = `https://fast-refuge-28086.herokuapp.com/manageinventories/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
